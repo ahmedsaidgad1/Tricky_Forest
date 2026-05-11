@@ -1,0 +1,5 @@
+spawn 100 500
+ground 0 600 1920 100
+door 1800 500 50 100
+hazard_rect 400 500 100 50
+hazard_ellipse 700 500 80 80
