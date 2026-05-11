@@ -1,0 +1,26 @@
+spawn 13 695
+ground 0 900 1920 180
+ground 980 660 320 242
+ground 565 660 735 70
+ground 1165 410 83 320
+ground 980 410 282 60
+ground 0 483 311 60
+ground 0 0 50 542
+ground 0 0 300 290
+ground 0 0 1920 50
+ground 576 0 65 312
+ground 560 255 242 57
+ground 1836 0 85 692
+ground 1615 386 305 305
+
+door 1897 695 23 203
+gate 1728 685 84 234
+
+enemy_circular 1000 410 500 0.5
+
+
+switch 1709 351 1
+switch 1039 630 2 
+switch 158 450 3
+switch 727 230 4 
+
