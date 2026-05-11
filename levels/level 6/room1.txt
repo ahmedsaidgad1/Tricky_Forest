@@ -1,0 +1,45 @@
+spawn 900 1744 
+ground 592 513 2661 1169 
+ground 3683 0 157 2224
+ground 142 0 3556 150
+ground 0 0 178 1616
+ground 0 1960 187 104
+ground 2611 1897 182 156
+ground 3490 1814 225 240
+ground 0 2023 3733 118
+gate 100 1620 90 422
+door 0 1619 60 422
+
+bounce 200 1870 200 300
+
+hazard_rect 975 430 177 100
+hazard_rect 1592 430 177 100
+hazard_rect 2262 430 177 100
+hazard_rect 1308 84 177 100
+hazard_rect 1927 115 177 100
+hazard_rect 2626 115 177 100
+hazard_rect 3495 115 177 100
+hazard_rect 3576 280 177 100
+hazard_rect 56 115 200 165
+hazard_rect 216 0 300 157
+
+
+enemy_patrol 138 1430 650 1430
+enemy_patrol 650 700 138 700
+
+enemy_patrol 3720 700 3203 700
+enemy_patrol 3203 1430 3720 1430
+
+
+
+enemy_circular 1920 1100 1000 0.7
+enemy_circular 1920 1100 800 -0.6
+enemy_circular 1920 1100 800 0.5
+enemy_circular 1920 1100 500 0.5
+enemy_circular 1920 1100 1500 -0.2
+enemy_circular 1920 1100 1900 0.9
+enemy_circular 1920 1100 2200 1
+
+
+switch 2673 1895 1
+
