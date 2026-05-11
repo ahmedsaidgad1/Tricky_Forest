@@ -447,7 +447,7 @@ void playBackgroundMusic(const string& filename) {
     }
 }
 void resetLevel(Level& lvl, Player& p, const Texture& enemyTex, const Texture& switchTexture, const Texture& bossTexture, bool& l3_key) {
-    string folderPath = "assets/levels/level-" + to_string(lvl.id);
+    string folderPath = "levels/level-" + to_string(lvl.id);
     lvl.rooms = loadAllRooms(folderPath, enemyTex, switchTexture, bossTexture);
     lvl.currentRoomIndex = 0;
     lvl.playerInputOrder.clear();
@@ -472,8 +472,8 @@ int main() {
     Texture playTex, exitTex, leveltex, lockTex, hometex, nexttex, repeartex;
     playTex.loadFromFile("assets/buttons/play_btn.png");
     exitTex.loadFromFile("assets/buttons/Exit_btn.png");
-    lockTex.loadFromFile("assets/levels/Locked.png");
-    leveltex.loadFromFile("assets/levels/Dummy.png");
+    lockTex.loadFromFile("levels/Locked.png");
+    leveltex.loadFromFile("levels/Dummy.png");
     hometex.loadFromFile("assets/buttons/Home.png");
     nexttex.loadFromFile("assets/buttons/Next.png");
     repeartex.loadFromFile("assets/buttons/Repeat.png");
@@ -481,7 +481,7 @@ int main() {
     Texture background, levelbg;
     Sprite menu_bg, level_bg;
     background.loadFromFile("assets/menu bg.png");
-    levelbg.loadFromFile("assets/levels/level_select.png");
+    levelbg.loadFromFile("levels/level_select.png");
     menu_bg.setTexture(background);
     level_bg.setTexture(levelbg);
     Texture switchTexture;
@@ -514,7 +514,7 @@ int main() {
     Texture hintTex[5];
     Sprite  hintSprite[5];
     for (int i = 1; i <= 4; i++) {
-        hintTex[i].loadFromFile("assets/levels/hints/hint_level" + to_string(i + 1) + ".png");
+        hintTex[i].loadFromFile("levels/hints/hint_level" + to_string(i + 1) + ".png");
         hintSprite[i].setTexture(hintTex[i]);
         hintSprite[i].setPosition(
             (1920 - hintTex[i].getSize().x) / 2.0f,
@@ -590,7 +590,7 @@ int main() {
     Texture enemyTex;
     enemyTex.loadFromFile("assets/characters/enemy.png");
     for (int i = 1; i <= 12; i++) {
-        string folderPath = "assets/levels/level-" + to_string(i);
+        string folderPath = "levels/level-" + to_string(i);
 
         if (filesystem::exists(folderPath)) {
             Level lvl;
