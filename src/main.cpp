@@ -416,7 +416,7 @@ vector<Room> loadAllRooms(string levelPath, const Texture& enemyTexture, const T
 }
 
 void saveProgress(int maxUnlocked) {
-    ofstream file("save.txt");
+    ofstream file("assets/save.txt");
     if (file.is_open()) {
         file << maxUnlocked;
         file.close();
@@ -425,7 +425,7 @@ void saveProgress(int maxUnlocked) {
 
 int loadProgress() {
     int maxUnlocked = 1;
-    ifstream file("save.txt");
+    ifstream file("assets/save.txt");
     if (file.is_open()) {
         file >> maxUnlocked;
         file.close();
@@ -447,7 +447,7 @@ void playBackgroundMusic(const string& filename) {
     }
 }
 void resetLevel(Level& lvl, Player& p, const Texture& enemyTex, const Texture& switchTexture, const Texture& bossTexture, bool& l3_key) {
-    string folderPath = "levels/level-" + to_string(lvl.id);
+    string folderPath = "assets/levels/level-" + to_string(lvl.id);
     lvl.rooms = loadAllRooms(folderPath, enemyTex, switchTexture, bossTexture);
     lvl.currentRoomIndex = 0;
     lvl.playerInputOrder.clear();
@@ -470,26 +470,26 @@ int main() {
     // ---------- MENU TEXTURES ----------
     vector<LevelButton> levelButtons;
     Texture playTex, exitTex, leveltex, lockTex, hometex, nexttex, repeartex;
-    playTex.loadFromFile("buttons/play_btn.png");
-    exitTex.loadFromFile("buttons/Exit_btn.png");
-    lockTex.loadFromFile("levels/Locked.png");
-    leveltex.loadFromFile("levels/Dummy.png");
-    hometex.loadFromFile("buttons/Home.png");
-    nexttex.loadFromFile("buttons/Next.png");
-    repeartex.loadFromFile("buttons/Repeat.png");
+    playTex.loadFromFile("assets/buttons/play_btn.png");
+    exitTex.loadFromFile("assets/buttons/Exit_btn.png");
+    lockTex.loadFromFile("assets/levels/Locked.png");
+    leveltex.loadFromFile("assets/levels/Dummy.png");
+    hometex.loadFromFile("assets/buttons/Home.png");
+    nexttex.loadFromFile("assets/buttons/Next.png");
+    repeartex.loadFromFile("assets/buttons/Repeat.png");
 
     Texture background, levelbg;
     Sprite menu_bg, level_bg;
-    background.loadFromFile("menu bg.png");
-    levelbg.loadFromFile("levels/level_select.png");
+    background.loadFromFile("assets/menu bg.png");
+    levelbg.loadFromFile("assets/levels/level_select.png");
     menu_bg.setTexture(background);
     level_bg.setTexture(levelbg);
     Texture switchTexture;
-    switchTexture.loadFromFile("static/switch.png");
+    switchTexture.loadFromFile("assets/static/switch.png");
     Texture bossTex, finalBossTex, fireTex;
-    bossTex.loadFromFile("characters/boss.png");
-    finalBossTex.loadFromFile("characters/final_boss.png");
-    fireTex.loadFromFile("characters/fire.png");
+    bossTex.loadFromFile("assets/characters/boss.png");
+    finalBossTex.loadFromFile("assets/characters/final_boss.png");
+    fireTex.loadFromFile("assets/characters/fire.png");
 
     FinalBoss finalBoss;
     finalBoss.texture = &finalBossTex;
@@ -514,7 +514,7 @@ int main() {
     Texture hintTex[5];
     Sprite  hintSprite[5];
     for (int i = 1; i <= 4; i++) {
-        hintTex[i].loadFromFile("levels/hints/hint_level" + to_string(i + 1) + ".png");
+        hintTex[i].loadFromFile("assets/levels/hints/hint_level" + to_string(i + 1) + ".png");
         hintSprite[i].setTexture(hintTex[i]);
         hintSprite[i].setPosition(
             (1920 - hintTex[i].getSize().x) / 2.0f,
@@ -526,7 +526,7 @@ int main() {
 
     int totalLevels = 12;
     Font font;
-    font.loadFromFile("Rubik-Bold.ttf");
+    font.loadFromFile("assets/Rubik-Bold.ttf");
     Text levelnum;
     levelnum.setFont(font);
     levelnum.setFillColor(Color::Black);
@@ -564,9 +564,9 @@ int main() {
 
     // --- Audio Setup ---
     SoundBuffer jumpBuffer, deathBuffer, keyBuffer, walkBuffer, gateBuffer;
-    jumpBuffer.loadFromFile("sounds/jumpkemo.mp3");
+    jumpBuffer.loadFromFile("assets/sounds/jumpkemo.mp3");
     deathBuffer.loadFromFile("death (1).mp3");
-    keyBuffer.loadFromFile("sounds/keycollect.mp3");
+    keyBuffer.loadFromFile("assets/sounds/keycollect.mp3");
     walkBuffer.loadFromFile("walk2.mp3");
     gateBuffer.loadFromFile("gate1.mp3");
 
@@ -588,9 +588,9 @@ int main() {
     int currentLevelIndex = 0;
 
     Texture enemyTex;
-    enemyTex.loadFromFile("characters/enemy.png");
+    enemyTex.loadFromFile("assets/characters/enemy.png");
     for (int i = 1; i <= 12; i++) {
-        string folderPath = "levels/level-" + to_string(i);
+        string folderPath = "assets/levels/level-" + to_string(i);
 
         if (filesystem::exists(folderPath)) {
             Level lvl;
@@ -604,7 +604,7 @@ int main() {
     }
 
     Player p;
-    p.texture.loadFromFile("characters/player sprite.png");
+    p.texture.loadFromFile("assets/characters/player sprite.png");
     p.sprite.setTexture(p.texture);
     p.sprite.setOrigin(p.frameWidth / 2.0f, p.frameHeight / 2.0f);
     p.sprite.setScale(0.3f, 0.3f);
@@ -613,9 +613,9 @@ int main() {
     }
 
     Texture keyTex, gateTex, bounceTex;
-    keyTex.loadFromFile("static/key sprite.png");
-    gateTex.loadFromFile("static/gate.png");
-    bounceTex.loadFromFile("static/bounce.png");
+    keyTex.loadFromFile("assets/static/key sprite.png");
+    gateTex.loadFromFile("assets/static/gate.png");
+    bounceTex.loadFromFile("assets/static/bounce.png");
     Sprite keySprite, gateSprite, bounceSprite;
     keySprite.setTexture(keyTex);
     gateSprite.setTexture(gateTex);
@@ -633,14 +633,14 @@ int main() {
 
         if (currentState != lastState) {
             if (currentState == MENU || currentState == LEVEL_SELECT) {
-                playBackgroundMusic("sounds/Menu.mp3");
+                playBackgroundMusic("assets/sounds/Menu.mp3");
             }
             else if (currentState == PLAYING) {
                 if (levels[currentLevelIndex].id == 6) {
-                    playBackgroundMusic("sounds/Boss.mp3");
+                    playBackgroundMusic("assets/sounds/Boss.mp3");
                 }
                 else {
-                    playBackgroundMusic("sounds/Menu.mp3");
+                    playBackgroundMusic("assets/sounds/Menu.mp3");
                 }
             }
             else if (currentState == DEAD) {
