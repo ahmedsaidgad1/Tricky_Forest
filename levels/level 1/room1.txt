@@ -1,0 +1,18 @@
+spawn 180 750
+second_spawn 1880 378
+
+ground 43 10 1261 417
+ground 43 427 41 493
+ground 84 874 599 46
+ground 683 647 44 273
+ground 683 645 830 39
+ground 1513 427 43 264
+ground 1513 419 430 32
+ground 1888 0 45 259
+ground 1304 0 584 25
+
+key 954 621 54 18
+
+gate 1848 262 72 153
+
+door 1911 259 9 160

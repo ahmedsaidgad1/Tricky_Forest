@@ -1,0 +1,11 @@
+spawn 1455 0
+ground 0 610 1920 471 
+ground 0 0 1012 455
+ground 603 9 831 204
+ground 1571 0 350 213
+ground 1787 210 133 240
+door 1895 465 23 138
+door 0 471 26 138
+
+enemy_chase 100 100
+hazard_rect 673 481 227 128

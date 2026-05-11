@@ -1,0 +1,19 @@
+spawn 45 719
+ground 1523 521 429 537
+ground 0 857 1896 151  
+ground 888 521 411 82
+ground 504 684 248 55
+ground 0 376 310 308
+ground 310 376 253 66
+ground 0 81 120 295
+ground 0 19 1701 90
+ground 1701 19 219 327
+ground 92 88 116 87
+back_door 0 692 1 155
+door 1897 377 12 108
+
+
+key 261 337 54 18
+
+
+gate 1760 352 65 170

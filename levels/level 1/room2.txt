@@ -1,0 +1,13 @@
+spawn 45 324
+second_spwan 1870 796
+ground 0 413 207 288
+ground 207 666 513 138
+ground 720 526 701 361
+ground 0 104 1845 131
+ground 1842 235 36 423
+ground 1644 658 276 63
+ground 1421 879 499 142
+door 1913 718 7 161
+back_door  0 235 3 183
+
+enemy_patrol 800 300 800 500
