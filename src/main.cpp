@@ -514,7 +514,7 @@ int main() {
     Texture hintTex[5];
     Sprite  hintSprite[5];
     for (int i = 1; i <= 4; i++) {
-        hintTex[i].loadFromFile("hint_level" + to_string(i + 1) + ".png");
+        hintTex[i].loadFromFile("levels/hints/hint_level" + to_string(i + 1) + ".png");
         hintSprite[i].setTexture(hintTex[i]);
         hintSprite[i].setPosition(
             (1920 - hintTex[i].getSize().x) / 2.0f,
